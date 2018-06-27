@@ -153,9 +153,7 @@ parser.add_option('--fast-forward-pseudo-op', action='store_true',
                   help = 'fast forward using kvm until the m5_switchcpu'
                   ' pseudo-op is encountered, then switch cpus. subsequent'
                   ' m5_switchcpu pseudo-ops will toggle back and forth')
-parser.add_option('--outOfOrderDataDelivery', action='store_true',
-                  default=False, help='enable OoO data delivery in the GM'
-                  ' pipeline')
+
 
 Ruby.define_options(parser)
 
@@ -250,9 +248,7 @@ for i in xrange(n_cu):
                                      localDataStore = \
                                      LdsState(banks = options.numLdsBanks,
                                               bankConflictPenalty = \
-                                              options.ldsBankConflictPenalty),
-                                     out_of_order_data_delivery =
-                                             options.outOfOrderDataDelivery))
+                                              options.ldsBankConflictPenalty)))
     wavefronts = []
     vrfs = []
     for j in xrange(options.simds_per_cu):

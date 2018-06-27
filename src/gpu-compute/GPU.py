@@ -135,8 +135,6 @@ class ComputeUnit(MemObject):
 
     vector_register_file = VectorParam.VectorRegisterFile("Vector register "\
                                                           "file")
-    out_of_order_data_delivery = Param.Bool(False, "enable OoO data delivery"
-                                            " in the GM pipeline")
 
 class Shader(ClockedObject):
     type = 'Shader'
